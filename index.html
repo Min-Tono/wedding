@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min & Laura Wedding</title>
+  <!-- 모바일 메신저(카카오톡/WhatsApp) 미리보기 설정 -->
+  <meta property="og:title" content="Min & Laura Wedding">
+  <meta property="og:description" content="2027.08.06 Pazo de Moreira">
+  <!-- 무료 디자인 프레임워크 (Tailwind CSS CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 구글 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Serif KR', serif; }
+    .font-eng { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 flex justify-center">
+
+  <!-- 모바일 최적화 컨테이너 -->
+  <main class="w-full max-w-md bg-white min-h-screen shadow-lg pb-16">
+
+    <!-- 1. 언어 전환 스위처 (상단 고정) -->
+    <div class="sticky top-0 bg-white/90 backdrop-blur border-b border-stone-200 px-4 py-3 flex justify-between items-center z-50">
+      <span class="text-xs tracking-widest uppercase font-eng text-stone-500">Wedding Invitation</span>
+      <div class="flex gap-1 text-xs">
+        <button onclick="changeLang('ko')" id="btn-ko" class="px-2.5 py-1 rounded bg-stone-800 text-white font-medium">KR</button>
+        <button onclick="changeLang('es')" id="btn-es" class="px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium">ES</button>
+      </div>
+    </div>
+
+    <!-- 2. 커버 섹션 -->
+    <section class="text-center px-6 py-12 border-b border-stone-100">
+      <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Save The Date</p>
+      <h1 class="font-eng text-3xl font-bold tracking-wide text-stone-800 mb-2">Min & Laura</h1>
+      <p class="text-stone-600 text-sm font-light mt-4" data-ko="2027년 8월 6일 금요일" data-es="Viernes, 6 de agosto de 2027">2027년 8월 6일 금요일</p>
+      <p class="text-stone-500 text-xs mt-1" data-ko="스페인 파소 데 모레이라" data-es="Pazo de Moreira, Galicia">스페인 파소 데 모레이라</p>
+    <!-- 사진을 넣고 싶은 위치에 붙여넣기 -->
+    <div class="px-6 py-4">
+        <img src="frontpic.jpg" alt="웨딩 메인 사진" class="w-full h-auto rounded-2xl shadow-sm object-cover" />
+    </div>
+      <!-- D-Day 박스 -->
+      <div class="mt-8 inline-block bg-stone-100 rounded-full px-5 py-2 text-xs font-medium text-stone-600">
+        <span id="dday-text">D-Day 계산 중...</span>
+      </div>
+    </section>
+
+    <!-- 3. 초대 인사말 -->
+    <section class="px-6 py-10 text-center border-b border-stone-100 leading-relaxed text-sm">
+      <h2 class="text-xs uppercase tracking-widest text-stone-400 mb-4 font-eng">Invitation</h2>
+      <p class="text-stone-600" data-ko="서로 다른 문화에서 자란 두 사람이 사랑 안에서 하나가 됩니다. 스페인 갈리시아의 아름다운 고택 파조에서 소중한 분들을 모시고 뜻깊은 첫걸음을 내딛고자 합니다." data-es="Dos vidas y dos culturas se unen en una sola historia de amor. Queremos compartir con vosotros el inicio de esta nueva etapa en un entorno tan especial como Galicia.">
+        서로 다른 문화에서 자란 두 사람이 사랑 안에서 하나가 됩니다. 스페인 갈리시아의 아름다운 고택 파조에서 소중한 분들을 모시고 뜻깊은 첫걸음을 내딛고자 합니다.
+      </p>
+    </section>
+
+    <!-- 4. 예식 당일 일정 타임라인 -->
+    <section class="px-6 py-10 border-b border-stone-100">
+      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-6 font-eng">Wedding Day Flow</h2>
+      <div class="space-y-4 text-xs">
+        <div class="flex gap-4 items-center">
+          <span class="w-16 font-semibold text-stone-500">18:00</span>
+          <div class="border-l pl-3 border-stone-300">
+            <p class="font-medium text-stone-800" data-ko="웰컴 칵테일" data-es="Cóctel de Bienvenida">웰컴 칵테일</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center">
+          <span class="w-16 font-semibold text-stone-500">19:00</span>
+          <div class="border-l pl-3 border-stone-300">
+            <p class="font-medium text-stone-800" data-ko="본식 세레모니" data-es="Ceremonia">본식 세레모니</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center">
+          <span class="w-16 font-semibold text-stone-500">20:30</span>
+          <div class="border-l pl-3 border-stone-300">
+            <p class="font-medium text-stone-800" data-ko="피로연 코스 식사" data-es="Banquete de Bodas">피로연 코스 식사</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center">
+          <span class="w-16 font-semibold text-stone-500">23:00~</span>
+          <div class="border-l pl-3 border-stone-300">
+            <p class="font-medium text-stone-800" data-ko="오픈 바 & 파티 (Barra Libre)" data-es="Barra Libre y Fiesta">오픈 바 & 파티 (Barra Libre)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 오시는 길 & 이동 가이드 -->
+    <section class="px-6 py-10 border-b border-stone-100">
+      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-4 font-eng">Location & Transport</h2>
+      <p class="text-xs text-center text-stone-600 mb-4">Pazo de Moreira</p>
+      
+      <!-- 지도 링크 버튼 -->
+      <a href="https://maps.google.com/?q=Pazo+de+Moreira" target="_blank" class="block w-full py-2.5 bg-stone-100 text-center text-xs font-semibold rounded text-stone-700 hover:bg-stone-200 transition mb-6">
+        Google Maps에서 위치 보기 ↗
+      </a>
+
+      <!-- 공항별 이동 가이드 (한국 하객용) -->
+      <div class="bg-stone-50 p-4 rounded-lg text-xs space-y-3">
+        <p class="font-semibold text-stone-700" data-ko="[항공편 도착별 이동 안내]" data-es="[Guía de Llegada desde Aeropuertos]">[항공편 도착별 이동 안내]</p>
+        <p class="text-stone-600 leading-normal" data-ko="• 비고 공항(VGO): 택시 약 15~20분 소요" data-es="• Aeropuerto de Vigo (VGO): Taxi ~15-20 min">
+          • 비고 공항(VGO): 택시 약 15~20분 소요
+        </p>
+        <p class="text-stone-600 leading-normal" data-ko="• 포르투 공항(OPO): 직통 버스(Autna/FlixBus) 또는 밴 픽업 이동 (약 1시간 15분)" data-es="• Aeropuerto de Oporto (OPO): Bus directo o traslado (~1h 15m)">
+          • 포르투 공항(OPO): 직통 버스(Autna/FlixBus) 또는 밴 픽업 이동 (약 1시간 15분)
+        </p>
+        <p class="text-stone-600 leading-normal" data-ko="• 산티아고 공항(SCQ): Monbus 또는 렌페(Renfe) 기차 연계 이동" data-es="• Aeropuerto de Santiago (SCQ): Monbus o conexión tren Renfe">
+          • 산티아고 공항(SCQ): Monbus 또는 렌페(Renfe) 기차 연계 이동
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. 참석 여부 전달하기 (RSVP) -->
+    <section class="px-6 py-10 border-b border-stone-100">
+      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-2 font-eng">RSVP</h2>
+      <p class="text-center text-xs text-stone-500 mb-6" data-ko="원활한 예식 준비를 위해 참석 여부를 회신해 주세요." data-es="Por favor, confirmad vuestra asistencia antes de la fecha límite.">
+        원활한 예식 준비를 위해 참석 여부를 회신해 주세요.
+      </p>
+
+      <!-- 구글 폼 또는 Tally 링크/임베드 -->
+      <div class="text-center">
+        <a href="여기에_구글폼_또는_Tally_링크를_붙여넣으세요" target="_blank" class="inline-block w-full py-3 bg-stone-800 text-white text-xs font-semibold rounded shadow active:scale-95 transition">
+          참석 여부 회신하기 (RSVP Form)
+        </a>
+      </div>
+    </section>
+
+    <!-- 7. 마음 전하실 곳 (축의금 / Gift) -->
+    <section class="px-6 py-10">
+      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-6 font-eng">Account Details</h2>
+      
+      <!-- 한국 계좌 -->
+      <div class="bg-stone-50 p-4 rounded-lg mb-3">
+        <p class="text-xs text-stone-500">신랑측 계좌번호 (한국)</p>
+        <div class="flex justify-between items-center mt-1">
+          <span class="text-xs font-mono font-medium text-stone-800">국민 123456-04-123456 (김민)</span>
+          <button onclick="copyText('12345604123456')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">복사</button>
+        </div>
+      </div>
+
+      <!-- 스페인 계좌 및 Bizum -->
+      <div class="bg-stone-50 p-4 rounded-lg">
+        <p class="text-xs text-stone-500">신부측 계좌번호 (España IBAN & Bizum)</p>
+        <div class="flex justify-between items-center mt-1">
+          <span class="text-xs font-mono font-medium text-stone-800">ES91 0000 0000 0000 0000 0000</span>
+          <button onclick="copyText('ES9100000000000000000000')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">Copiar</button>
+        </div>
+        <div class="flex justify-between items-center mt-2 border-t border-stone-200 pt-2">
+          <span class="text-xs font-mono font-medium text-stone-800">Bizum: +34 600 000 000</span>
+          <button onclick="copyText('+34600000000')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">Copiar</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 자바스크립트: D-Day 계산, 다국어 전환, 계좌 복사 -->
+  <script>
+    // 1. D-Day 카운트다운 (2027년 8월 6일 기준)
+    const weddingDate = new Date("2027-08-06T18:00:00").getTime();
+    function updateDday() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const el = document.getElementById("dday-text");
+      if (days > 0) {
+        el.innerText = `예식까지 ${days}일 남았습니다`;
+      } else if (days === 0) {
+        el.innerText = "오늘 결혼식이 진행됩니다!";
+      } else {
+        el.innerText = "예식이 성황리에 마무리되었습니다.";
+      }
+    }
+    updateDday();
+
+    // 2. 다국어 토글 (KR / ES)
+    function changeLang(lang) {
+      document.querySelectorAll('[data-ko]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+      const btnKo = document.getElementById('btn-ko');
+      const btnEs = document.getElementById('btn-es');
+      if (lang === 'ko') {
+        btnKo.className = "px-2.5 py-1 rounded bg-stone-800 text-white font-medium";
+        btnEs.className = "px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium";
+      } else {
+        btnEs.className = "px-2.5 py-1 rounded bg-stone-800 text-white font-medium";
+        btnKo.className = "px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium";
+      }
+    }
+
+    // 3. 계좌번호 복사 기능
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("계좌번호가 복사되었습니다.");
+      }).catch(() => {
+        alert("복사에 실패했습니다. 직접 복사해 주세요.");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -3,160 +3,498 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Min & Laura Wedding</title>
-  <!-- 모바일 메신저(카카오톡/WhatsApp) 미리보기 설정 -->
-  <meta property="og:title" content="Min & Laura Wedding">
-  <meta property="og:description" content="2027.08.06 Pazo de Moreira">
-  <!-- 무료 디자인 프레임워크 (Tailwind CSS CDN) -->
+  <title>민 & 라우라 결혼식에 초대합니다</title>
+  <meta property="og:title" content="민 & 라우라 결혼식 초대장">
+  <meta property="og:description" content="2027년 8월 6일 금요일 | 스페인 파소 데 모레이라">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- 구글 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- 폰트 설정 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Noto Serif KR', serif; }
     .font-eng { font-family: 'Playfair Display', serif; }
   </style>
 </head>
-<body class="bg-stone-50 text-stone-800 flex justify-center">
+<body class="bg-stone-100 text-stone-800 flex justify-center min-h-screen">
+<!--
+여백(공백) 주기
+  <p class="mb-6">이 문장 아래에 한 줄 정도의 공백이 생깁니다.</p>
+  <p class="mt-6">이 문장 위에 공백이 생깁니다.</p>
+폰트 크기
+  text-xs: 아주 작게 (약 12px) - 현재 청첩장의 본문 기본 크기
+  text-sm: 작게 (약 14px)
+  text-base: 기본 크기 (약 16px)
+  text-lg: 조금 크게 (약 18px)
+  text-xl: 크게 (약 20px)
+  text-2xl: 더 크게 (약 24px)
+  text-3xl: 가장 크게 (약 30px) - 메인 타이틀용
+폰트 색상(text-색상-0~1000)
+stone-: 차분하고 따뜻한 회색 계열 (현재 적용된 기본값)
+zinc- 또는 gray-: 깔끔한 현대식 회색 계열
+rose- 또는 pink-: 로맨틱한 핑크·장미빛 계열 (웨딩에 많이 쓰임)
+amber- 또는 yellow-: 따뜻한 골드·베이지빛 계열
+emerald- 또는 teal-: 싱그러운 초록·청록빛 계열
+-->
 
-  <!-- 모바일 최적화 컨테이너 -->
-  <main class="w-full max-w-md bg-white min-h-screen shadow-lg pb-16">
+  <!-- 모바일 카드 컨테이너 -->
+  <main class="w-full max-w-md bg-white shadow-xl min-h-screen">
 
-    <!-- 1. 언어 전환 스위처 (상단 고정) -->
-    <div class="sticky top-0 bg-white/90 backdrop-blur border-b border-stone-200 px-4 py-3 flex justify-between items-center z-50">
-      <span class="text-xs tracking-widest uppercase font-eng text-stone-500">Wedding Invitation</span>
-      <div class="flex gap-1 text-xs">
-        <button onclick="changeLang('ko')" id="btn-ko" class="px-2.5 py-1 rounded bg-stone-800 text-white font-medium">KR</button>
-        <button onclick="changeLang('es')" id="btn-es" class="px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium">ES</button>
+    <!-- 1. 메인 커버 -->
+    <section class="text-center px-6 pt-16 pb-12 border-b border-stone-200">
+      <p class="text-stone-400 text-xs tracking-[0.25em] uppercase mb-4">Invitación</p>
+      <h1 class="font-eng text-3xl font-bold tracking-wide text-stone-900 mb-2">민 & 라우라</h1>
+      <p class="text-stone-700 text-sm font-light mt-4">2027년 8월 6일 금요일</p>
+      <p class="text-stone-500 text-xs mt-1">스페인, 갈리시아에서</p>
+      
+      <!-- 대표 사진 영역 (wedding-photo.jpg 파일이 같은 폴더에 있어야 합니다) -->
+      <div class="my-8 px-2">
+        <img src="frontpic.jpg" alt="웨딩 사진" class="w-full h-auto rounded-2xl shadow-md object-cover" onerror="this.style.display='none'" />
       </div>
-    </div>
 
-    <!-- 2. 커버 섹션 -->
-    <section class="text-center px-6 py-12 border-b border-stone-100">
-      <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Save The Date</p>
-      <h1 class="font-eng text-3xl font-bold tracking-wide text-stone-800 mb-2">Min & Laura</h1>
-      <p class="text-stone-600 text-sm font-light mt-4" data-ko="2027년 8월 6일 금요일" data-es="Viernes, 6 de agosto de 2027">2027년 8월 6일 금요일</p>
-      <p class="text-stone-500 text-xs mt-1" data-ko="스페인 파소 데 모레이라" data-es="Pazo de Moreira, Galicia">스페인 파소 데 모레이라</p>
-    <!-- 사진을 넣고 싶은 위치에 붙여넣기 -->
-    <div class="px-6 py-4">
-        <img src="frontpic.jpg" alt="웨딩 메인 사진" class="w-full h-auto rounded-2xl shadow-sm object-cover" />
-    </div>
+
+
+       <h2 class="text-xs uppercase tracking-[0.2em] text-stone-400 mb-6 font-eng"></h2>
+     <br>
+       <p class="text-stone-700 leading-loose">
+        다른 두 사람이<br>
+        하나의 삶을 이룹니다.<br>
+        <br>
+        재미있는 여정이 되겠습니다.
+      </p>
+      <div class="mt-8 text-xs text-stone-500">
+        신랑 <strong class="text-stone-800">민 동녘</strong>, 그리고 신부 <strong class="text-stone-800">알바레즈 그렐라 라우라 </strong>
+      </div>
+      <br><br>
       <!-- D-Day 박스 -->
-      <div class="mt-8 inline-block bg-stone-100 rounded-full px-5 py-2 text-xs font-medium text-stone-600">
+      <div class="inline-block bg-stone-100 rounded-full px-5 py-2 text-xs text-stone-600">
         <span id="dday-text">D-Day 계산 중...</span>
       </div>
+
+    </section>
+ <!-- 예식 진행 식순 (타임라인) -->
+    <section class="px-6 py-12 border-b border-stone-200">
+      <!-- <h2 class="text-center text-xs uppercase tracking-[0.2em] text-stone-400 mb-2 font-eng">Program</h2> -->
+      <h3 class="text-center text-sm font-semibold text-stone-800 mb-1">결혼식 당일 일정 참고</h3>
+      <p class="mb-6"></p>
+      <p class="text-center text-xs text-stone-500 mb-8">스페인의 결혼식 양식을 따릅니다.</p>
+
+      <div class="space-y-8 text-xs pl-4 border-l-2 border-stone-200 ml-4">
+
+        <!-- 1. 셔틀 탑승 -->
+        <div class="relative">
+          <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-stone-800"></span>
+          <p class="font-semibold text-stone-900 text-sm">16:00 · 셔틀버스 탑승 (Shuttle)</p>
+          <p class="text-stone-500 mt-1 leading-normal">숙소 인근 지정 장소에서 식장행 전용 셔틀버스 탑승</p>
+        </div>
+
+        <!-- 2. 본식 세레모니 -->
+        <div class="relative">
+          <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-stone-800"></span>
+          <p class="font-semibold text-stone-900 text-sm">17:00 (약 40분) · 본식 세레모니 (Ceremonia)</p>
+          <p class="text-stone-500 mt-1 mb-3 leading-normal">야외 가든에서 진행 (우천 시 실내 공간 진행)</p>
+
+          <!-- 이미지 삽입 영역 -->
+              <div class="flex gap-2 px-6 py-4">
+                <img src="seremo1.jpg" alt="사진1" class="w-1/2 h-36 rounded-xl object-cover" />
+                <img src="seremo3.jpg" alt="사진2" class="w-1/2 h-36 rounded-xl object-cover" />
+              </div>
+
+          <!-- 본식 세부 분기점 -->
+          <div class="bg-stone-50 rounded-xl p-3.5 border border-stone-100 space-y-3 mt-2">
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">신랑 입장</strong>
+                <span class="text-stone-500 text-[11px]">
+                  <span class="text-rose-600 font-semibold">백현자 여사님</span>과 동반 입장</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">신부 입장</strong>
+                <span class="text-stone-500 text-[11px]">아버지와 동반 입장</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">신랑측 축사</strong>
+                  <span class="text-stone-500 text-[11px]">
+                      <span class="text-rose-600 font-semibold">백현자 여사님</span>의 스페인어 축사</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">신부측 축사</strong>
+                <span class="text-stone-500 text-[11px]">여동생 및 친구 축사</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">혼인 언약식</strong>
+                <span class="text-stone-500 text-[11px]">두 사람의 서약 낭독 등</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">퇴장 행진 & 플라워 샤워</strong>
+                <span class="text-stone-500 text-[11px]">버진로드 행진 및 하객들의 꽃잎 축하 세례</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 칵테일 -->
+        <div class="relative">
+          <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-stone-800"></span>
+          <p class="font-semibold text-stone-900 text-sm">18:00 - 20:00 (2h) · 다과회 (Cóctel)</p>
+          <p class="text-stone-500 mt-1 leading-normal">음료 및 주류, 제철 한입거리 타파스, 하몽과 함께 자유로운 담화</p>
+        </div>
+
+        <!-- 이미지 삽입 영역 -->
+              <div class="flex gap-2 px-6 py-4">
+                <img src="coctel2.jpg" alt="사진1" class="w-1/2 h-36 rounded-xl object-cover" />
+                <img src="coctel1.jpg" alt="사진2" class="w-1/2 h-36 rounded-xl object-cover" />
+              </div>
+
+        <!-- 4. 피로연 만찬 -->
+        <div class="relative">
+          <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-stone-800"></span>
+          <p class="font-semibold text-stone-900 text-sm">20:00 - 22:00 (2h) · 피로연 만찬 (Banquete)</p>
+          <p class="text-stone-500 mt-1 mb-3 leading-normal">전채 요리, 메인 요리, 디저트 3코스 식사</p>
+          
+           <!-- 이미지 삽입 영역 -->
+             <div class="mb-6 px-1">
+              <img src="main1.jpg" alt="사진1" class="w-full h-auto rounded-xl shadow-sm border border-stone-200 object-cover" onerror="this.style.display='none'" />
+            </div>
+            
+
+
+          <!-- 피로연 세부 분기점 -->
+          <div class="bg-stone-50 rounded-xl p-3.5 border border-stone-100 space-y-3 mt-2">
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">신부측 추가 축사</strong>
+                <span class="text-stone-500 text-[11px]">식사 중 진행되는 축하 낭독</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">조부모님께 꽃다발 수여식</strong>
+                <span class="text-stone-500 text-[11px]">꽃다발 전달. 아마도 라우라 조부모님들께만 할 듯</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 파티 & 귀가 셔틀 -->
+        <div class="relative">
+          <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-stone-800"></span>
+          <p class="font-semibold text-stone-900 text-sm">22:00 - 02:00 · 파티 (Barra Libre)</p>
+          <p class="text-stone-500 mt-1 mb-3 leading-normal">DJ 음악과 무제한 주류가 함께하는 축하 파티</p>
+         
+           <!-- 이미지 삽입 영역 -->
+              <div class="flex gap-2 px-6 py-4">
+                <img src="laura_dance.jpg" alt="사진1" class="w-1/2 h-36 rounded-xl object-cover" />
+                <img src="dance2.jpg" alt="사진2" class="w-1/2 h-36 rounded-xl object-cover" />
+              </div>
+
+          <!-- 파티 세부 분기점 -->
+          <div class="bg-stone-50 rounded-xl p-3.5 border border-stone-100 space-y-3 mt-2">
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">오프닝 댄스</strong>
+                <span class="text-stone-500 text-[11px]">동녘-<span class="text-rose-600 font-semibold">백현자 여사님</span>,
+                 라우라-장인어른이 서로를 정중하게 안고서, 약 30초간 결혼 커플의 '첫 걸음'을 상징하는 오프닝 블루스를 추게 됩니다.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">이후 자유로운 음주가무</strong>
+                <span class="text-stone-500 text-[11px]">자유로운 추태 부리기 가능</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">1차 귀가 셔틀</strong>
+                <span class="text-stone-500 text-[11px]">22:00 숙소 복귀 셔틀 출발</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 shrink-0"></span>
+              <div>
+                <strong class="text-stone-800 block text-xs">2차 귀가 셔틀</strong>
+                <span class="text-stone-500 text-[11px]">00:00 (자정) 2차 숙소 복귀 셔틀 출발</span>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- 3. 초대 인사말 -->
-    <section class="px-6 py-10 text-center border-b border-stone-100 leading-relaxed text-sm">
-      <h2 class="text-xs uppercase tracking-widest text-stone-400 mb-4 font-eng">Invitation</h2>
-      <p class="text-stone-600" data-ko="서로 다른 문화에서 자란 두 사람이 사랑 안에서 하나가 됩니다. 스페인 갈리시아의 아름다운 고택 파조에서 소중한 분들을 모시고 뜻깊은 첫걸음을 내딛고자 합니다." data-es="Dos vidas y dos culturas se unen en una sola historia de amor. Queremos compartir con vosotros el inicio de esta nueva etapa en un entorno tan especial como Galicia.">
-        서로 다른 문화에서 자란 두 사람이 사랑 안에서 하나가 됩니다. 스페인 갈리시아의 아름다운 고택 파조에서 소중한 분들을 모시고 뜻깊은 첫걸음을 내딛고자 합니다.
-      </p>
+ <!--  복장 및 참석 팁 안내 -->
+    <section class="px-6 py-12 border-b border-stone-200">
+      <h2 class="text-center text-xs uppercase tracking-[0.2em] text-stone-400 mb-2 font-eng">Dress Code</h2>
+      <h3 class="text-center text-sm font-semibold text-stone-800 mb-2">복장 안내</h3>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3.5 bg-stone-50 rounded-xl">
+          <p class="font-bold text-stone-800 mb-1">  </p>
+          <p class="text-stone-600 leading-normal">
+            <p> • <span class="text-rose-800 font-bold">흰색 계열의 원피스나 정장은 신부를 위해 양해 부탁드립니다.</span></p>
+            <br>
+            <p> • 여성은 원피스 또는 세미 포멀 스타일을 권장합니다. </p>
+            <br>
+            <p> • 남성은 단정한 정장 또는 세미 포멀 스타일을 권장합니다. </p>
+            <br>
+          </p>
+        </div>
+
+    </section>
+<!--  숙소  -->
+    <section class="px-6 py-12">
+      <h2 class="text-center text-xs uppercase tracking-[0.2em] text-stone-400 mb-2 font-eng">Stay</h2>
+      <h3 class="text-center text-sm font-semibold text-stone-800 mb-6">숙소</h3>
+
+      <div class="text-xs text-stone-600 space-y-4">
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-100">
+          <p class="font-bold text-stone-800 mb-1"></p>
+          <p class="leading-normal">
+            추후 안내 예정
+          </p>
+        </div>
     </section>
 
-    <!-- 4. 예식 당일 일정 타임라인 -->
-    <section class="px-6 py-10 border-b border-stone-100">
-      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-6 font-eng">Wedding Day Flow</h2>
+<!-- 한국 출발 하객 추천 이동 동선 섹션 -->
+    <section class="px-6 py-12 border-b border-stone-200">
+      <h2 class="text-center text-base font-semibold text-stone-800 mb-4">스페인 비고(Vigo) 입국 가이드</h2>
+      <h3 class="text-center text-sm font-light text-stone-800 mb-10">한국 출발 하객 추천 이동 동선(참고용)</h3>
       <div class="space-y-4 text-xs">
-        <div class="flex gap-4 items-center">
-          <span class="w-16 font-semibold text-stone-500">18:00</span>
-          <div class="border-l pl-3 border-stone-300">
-            <p class="font-medium text-stone-800" data-ko="웰컴 칵테일" data-es="Cóctel de Bienvenida">웰컴 칵테일</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <span class="w-16 font-semibold text-stone-500">19:00</span>
-          <div class="border-l pl-3 border-stone-300">
-            <p class="font-medium text-stone-800" data-ko="본식 세레모니" data-es="Ceremonia">본식 세레모니</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <span class="w-16 font-semibold text-stone-500">20:30</span>
-          <div class="border-l pl-3 border-stone-300">
-            <p class="font-medium text-stone-800" data-ko="피로연 코스 식사" data-es="Banquete de Bodas">피로연 코스 식사</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <span class="w-16 font-semibold text-stone-500">23:00~</span>
-          <div class="border-l pl-3 border-stone-300">
-            <p class="font-medium text-stone-800" data-ko="오픈 바 & 파티 (Barra Libre)" data-es="Barra Libre y Fiesta">오픈 바 & 파티 (Barra Libre)</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 5. 오시는 길 & 이동 가이드 -->
-    <section class="px-6 py-10 border-b border-stone-100">
-      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-4 font-eng">Location & Transport</h2>
-      <p class="text-xs text-center text-stone-600 mb-4">Pazo de Moreira</p>
+    <!-- 📌 입국 루트 3줄 핵심 요약 섹션 -->
+    <section class="px-6 py-8 bg-stone-50 border-b border-stone-200">
       
-      <!-- 지도 링크 버튼 -->
-      <a href="https://maps.google.com/?q=Pazo+de+Moreira" target="_blank" class="block w-full py-2.5 bg-stone-100 text-center text-xs font-semibold rounded text-stone-700 hover:bg-stone-200 transition mb-6">
-        Google Maps에서 위치 보기 ↗
-      </a>
+      <!-- 섹션 헤더 -->
+      <div class="text-center mb-5">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-eng">Summary</span>
+        <h3 class="text-sm font-semibold text-stone-800 mt-1">공항 검색 키워드</h3>
+      </div>
+      <!-- 3줄 요약 카드 컨테이너 -->
+      <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-3 text-xs leading-relaxed text-stone-600">     
+        <!-- 첫 번째 요약 줄 -->
+        <div class="flex items-start gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-stone-800 text-white text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-sans font-medium">1</span>
+          <p class="text-stone-700">
+            <strong>마드리드(MAD)/바르셀로나(BCN) 공항으로 검색</strong>
+          </p>
+        </div>
+        <!-- 두 번째 요약 줄 -->
+        <div class="flex items-start gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-stone-800 text-white text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-sans font-medium">2</span>
+          <p class="text-stone-700">
+            <strong>포르토(포르투갈) 공항(OPO)으로 검색</strong>
+          </p>
+        </div>
+        <!-- 세 번째 요약 줄 -->
+        <div class="flex items-start gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-stone-800 text-white text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-sans font-medium">3</span>
+          <p class="text-stone-700">
+            <strong>산티아고 데 콤포스텔라 공항(SCQ)으로 검색</strong>
+          </p>
+        </div>
 
-      <!-- 공항별 이동 가이드 (한국 하객용) -->
-      <div class="bg-stone-50 p-4 rounded-lg text-xs space-y-3">
-        <p class="font-semibold text-stone-700" data-ko="[항공편 도착별 이동 안내]" data-es="[Guía de Llegada desde Aeropuertos]">[항공편 도착별 이동 안내]</p>
-        <p class="text-stone-600 leading-normal" data-ko="• 비고 공항(VGO): 택시 약 15~20분 소요" data-es="• Aeropuerto de Vigo (VGO): Taxi ~15-20 min">
-          • 비고 공항(VGO): 택시 약 15~20분 소요
-        </p>
-        <p class="text-stone-600 leading-normal" data-ko="• 포르투 공항(OPO): 직통 버스(Autna/FlixBus) 또는 밴 픽업 이동 (약 1시간 15분)" data-es="• Aeropuerto de Oporto (OPO): Bus directo o traslado (~1h 15m)">
-          • 포르투 공항(OPO): 직통 버스(Autna/FlixBus) 또는 밴 픽업 이동 (약 1시간 15분)
-        </p>
-        <p class="text-stone-600 leading-normal" data-ko="• 산티아고 공항(SCQ): Monbus 또는 렌페(Renfe) 기차 연계 이동" data-es="• Aeropuerto de Santiago (SCQ): Monbus o conexión tren Renfe">
-          • 산티아고 공항(SCQ): Monbus 또는 렌페(Renfe) 기차 연계 이동
-        </p>
       </div>
     </section>
 
-    <!-- 6. 참석 여부 전달하기 (RSVP) -->
-    <section class="px-6 py-10 border-b border-stone-100">
-      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-2 font-eng">RSVP</h2>
-      <p class="text-center text-xs text-stone-500 mb-6" data-ko="원활한 예식 준비를 위해 참석 여부를 회신해 주세요." data-es="Por favor, confirmad vuestra asistencia antes de la fecha límite.">
-        원활한 예식 준비를 위해 참석 여부를 회신해 주세요.
-      </p>
-
-      <!-- 구글 폼 또는 Tally 링크/임베드 -->
-      <div class="text-center">
-        <a href="여기에_구글폼_또는_Tally_링크를_붙여넣으세요" target="_blank" class="inline-block w-full py-3 bg-stone-800 text-white text-xs font-semibold rounded shadow active:scale-95 transition">
-          참석 여부 회신하기 (RSVP Form)
-        </a>
+        
+        <!-- 📍 비행 경로 지도 이미지 삽입 영역 -->
+      <div class="mb-6 px-1">
+        <img src="madbcn2vgo.png" alt="한국에서 비고로 가는 비행 경로 지도" class="w-full h-auto rounded-xl shadow-sm border border-stone-200 object-cover" onerror="this.style.display='none'" />
       </div>
-    </section>
+      <div class="space-y-4 text-xs">
 
-    <!-- 7. 마음 전하실 곳 (축의금 / Gift) -->
-    <section class="px-6 py-10">
-      <h2 class="text-center text-xs uppercase tracking-widest text-stone-400 mb-6 font-eng">Account Details</h2>
+        <!-- 직항 + 비고 국내선 -->
+        <div class="p-4 bg-stone-50 rounded-xl border border-stone-100">
+
+          <!-- 1. 독립된 배지 및 타이틀 영역 -->
+              <div class="mb-3 pb-3 border-b border-stone-200">
+                <span class="inline-block mb-1.5 text-[11px] bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-0.5 rounded-full font-medium">
+                  ✨ 스페인 중심으로 여행 계획이 있으신 분들에게 추천하는 경로
+                </span>
+                <h4 class="font-bold text-stone-900 text-sm">
+                  <span class="text-rose-600 font-bold">스페인 경유하기</span>: 스페인 직항(또는 경유) ↔ 비고 공항(VGO)
+                </h4>
+              </div>
+
+          <div class="flex justify-between items-center mb-1.5"></div>
+          <p class="text-stone-600 text-xs leading-normal space-y-1">
+            • <strong>이동 경로</strong>: 인천 공항(ICN) ↔ 마드리드(MAD)/바르셀로나(BCN) 공항  ↔  비고 공항(VGO) <br>
+            <br>
+            • <strong>특징 안내</strong>: 편함. 직관적임
+              <!-- 하위 세부 불렛포인트 영역 -->
+              <div class="pl-3.5 space-y-1 mt-1.5 border-l-2 border-stone-200">
+                <p>◦ <strong>스페인 위주 여행하실 분들은 인천에서 직항이 있는 '바르셀로나', '마드리드'에서 여행 시작과 마무리가 가능 </strong></p>
+                <p>◦ 중동(두바이, 아부다비) 항공사 추천(저렴하면서도 비행 좌석과 서비스가 국내 저가 항공에 비해 월등함).
+                  단점이라면 전쟁 이슈로 마음 졸일 가능성이 있음 </p>
+                <p>◦ 중국 항공사가 현재 유럽 여행 기준 가장 저렴함. 취사 선택
+                <p>◦ '스페인'하면 생각나는, '투우, 토마토 축제, 플라멩코' 같은 것들은 남쪽 지방인 <span class="text-rose-500">안달루시아</span>의 문화인데, 
+                  결혼식이 있는 8월 여름에는 40도를 기본으로 넘는 더위를 보이기 때문에 관광은 매우 비추천</p>
+              </div>
+              <br>
+            • <strong>단점</strong>: 비고 공항(VGO)은 소규모 공항으로, 타국에서 오갈 수 있는 비행기편이 거의 없다고 보면 됨. 바르셀로나 혹은 
+            마드리드 공항에서만 올 수 있다고 생각하는 게 편함. 즉, 둘러 볼 수 있는 도시가 한정적이게 됨 
+
+          </p>
+        </div>
+
+
+         <!-- 📍 비행 경로 지도 이미지 삽입 영역 -->
+<div class="mb-6 px-1">
+  <img src="eu2vgo.png" alt="한국에서 비고로 가는 비행 경로 지도" class="w-full h-auto rounded-xl shadow-sm border border-stone-200 object-cover" onerror="this.style.display='none'" />
+</div>
+
+<div class="space-y-4 text-xs">
+  <!-- 포르투 공항 입국 루트 -->
+  <div class="p-4 bg-stone-50 rounded-xl border border-stone-100">
+    
+    <!-- 1. 독립된 배지 및 타이틀 영역 -->
+    <div class="mb-3 pb-3 border-b border-stone-200">
+      <span class="inline-block mb-1.5 text-[11px] bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-0.5 rounded-full font-medium">
+        ✨ 스페인 외 여행지에서 '비고'로 들어오는 경우 추천하는 경로 </span>
+
+      <h4 class="font-bold text-stone-900 text-sm">
+        <span class="text-rose-600 font-bold">포르투갈 경유하기</span>: (원하시는 여행지) ↔ 포르토 공항(OPO) ↔ 비고
+      </h4>
+    </div>
+
+    <!-- 2. 본문 내용 영역 (HTML 구조 오류 수정 완료) -->
+    <div class="text-stone-600 text-xs leading-relaxed space-y-2.5">
       
-      <!-- 한국 계좌 -->
-      <div class="bg-stone-50 p-4 rounded-lg mb-3">
-        <p class="text-xs text-stone-500">신랑측 계좌번호 (한국)</p>
-        <div class="flex justify-between items-center mt-1">
-          <span class="text-xs font-mono font-medium text-stone-800">국민 123456-04-123456 (김민)</span>
-          <button onclick="copyText('12345604123456')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">복사</button>
+      <p>• <strong>이동 경로</strong>: 인천(ICN) ↔ 원하시는 여행지 ↔ 포르토(OPO) ➔ 비고 (직통 버스 또는 차량 픽업, 약 1시간 30분 소요)</p>
+      
+      <div>
+        <p>• <strong>특징 안내</strong>: 자유 여행 및 포르토(포르투갈) 관광 연계 가능</p>
+        <!-- 하위 세부 불렛포인트 영역 -->
+        <div class="pl-3.5 space-y-1 mt-1.5 border-l-2 border-stone-200 text-stone-500">
+          <p>◦ <span class="text-rose-600 font-bold">인천에서 다른 유럽 국가 여행 계획이 없는 경우라도 포르토를 통해 입국하는 것이 가장 저렴함</span></p>
+          <p>◦ 포르토(OPO) 공항은 대형 국제공항으로 항공편 노선이 다양하여 항공권 비용이 합리적이고 일정 조율이 편리함</p>
+          <p>◦ 포르투갈 최고 인기 관광지인 '포르토' 관광 가능</p>
         </div>
       </div>
 
-      <!-- 스페인 계좌 및 Bizum -->
-      <div class="bg-stone-50 p-4 rounded-lg">
-        <p class="text-xs text-stone-500">신부측 계좌번호 (España IBAN & Bizum)</p>
-        <div class="flex justify-between items-center mt-1">
-          <span class="text-xs font-mono font-medium text-stone-800">ES91 0000 0000 0000 0000 0000</span>
-          <button onclick="copyText('ES9100000000000000000000')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">Copiar</button>
+      <p>• <strong>단점</strong>: 잦은 환승. 유럽 입국 후 포르투갈에서 스페인 비고까지 추가 지상 이동(버스/차량) 피로도 발생</p>
+      
+    </div>
+
+  </div>
+</div>
+
+
+         <!-- 📍 비행 경로 지도 이미지 삽입 영역 -->
+      <div class="mb-6 px-1">
+        <img src="scq2vgo.png" alt="한국에서 비고로 가는 비행 경로 지도" class="w-full h-auto rounded-xl shadow-sm border border-stone-200 object-cover" onerror="this.style.display='none'" />
+      </div>
+      <div class="space-y-4 text-xs">
+        <!-- 대안 노선: 산티아고 공항 연계 -->
+        <div class="p-4 bg-stone-50 rounded-xl border border-stone-100">
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="font-bold text-stone-900"><span class="text-rose-600 text-sm font-bold">산티아고 공항 경유하기</span>: (원하시는 여행지) ↔ 산티아고 공항(SCQ) ↔ 비고 공항(VGO)</span>
+            <!--span class="text-[11px] bg-stone-200 text-stone-700 px-2 py-0.5 rounded font-medium">대안 노선</span -->
+          </div>
+          <p class="text-stone-600 text-xs leading-normal space-y-1">
+            • <strong>이동 경로</strong>: 인천(ICN) ↔ (원하시는 여행지) ↔ 산티아고 공항(SCQ) ↔  비고: 공항 버스(40분) + 기차(한 시간)<br>
+            <br>
+            • <strong>특징 안내</strong>:  자유 여행
+            <!-- 하위 세부 불렛포인트 영역 -->
+              <div class="pl-3.5 space-y-1 mt-1.5 border-l-2 border-stone-200">
+                <p>◦ <strong>산티아고 공항(SCQ) 공항이 규모가 큰 국제 공항이라서 비행기편 양이 많고 경로가 다양하기 때문에 비행기표 값이 저렴함. 일반적으로 포르투갈 포르토 공항(OPO)이 더 저렴함. 따라서 대안적인 선택지임 </strong></p>
+                <p>◦  그 유명한 '산티아고 순례길'의 최종 목적지인 '산티아고'에서 관광 가능</p>
+              </div>
+          </p>
         </div>
-        <div class="flex justify-between items-center mt-2 border-t border-stone-200 pt-2">
-          <span class="text-xs font-mono font-medium text-stone-800">Bizum: +34 600 000 000</span>
-          <button onclick="copyText('+34600000000')" class="text-xs bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded text-stone-700">Copiar</button>
+
+      </div>
+
+      
+ </section>   
+      <!-- 8월 항공권 예상 가격 비교 표 -->
+<div class="my-5 overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm">
+  <div class="bg-stone-100 px-4 py-2.5 border-b border-stone-200">
+    <p class="text-[11px] font-semibold text-stone-700">✈️ 8월 성수기 공항별 예상 항공료 (1인 왕복 기준)</p>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-xs text-stone-600">
+      <thead class="bg-stone-50 text-[11px] text-stone-500 border-b border-stone-200">
+        <tr>
+          <th scope="col" class="py-2.5 pl-3 pr-2 font-medium">도착 공항</th>
+          <th scope="col" class="px-2 py-2.5 font-medium">경유 횟수</th>
+          <th scope="col" class="py-2.5 pl-2 pr-3 text-right font-medium">8월 예상가</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-stone-100 text-[11px]">
+        <tr class="hover:bg-stone-50/60">
+          <td class="py-3 pl-3 pr-2 font-semibold text-stone-800 break-keep">비고 (VGO)</td>
+          <td class="px-2 py-3 text-stone-600 break-keep">1회(마드리드/바르셀로나) ~ 2회</td>
+          <td class="py-3 pl-2 pr-3 text-right font-semibold text-stone-900 whitespace-nowrap">160만 원 ~</td>
+        </tr>
+        <tr class="bg-emerald-50/40 hover:bg-emerald-50/70">
+          <td class="py-3 pl-3 pr-2 font-semibold text-emerald-900 break-keep">포르토 (OPO)</td>
+          <td class="px-2 py-3 text-stone-600 break-keep"> 다수 (유럽/중동)</td>
+          <td class="py-3 pl-2 pr-3 text-right font-bold text-emerald-700 whitespace-nowrap">140만 원 ~ </td>
+        </tr>
+        <tr class="hover:bg-stone-50/60">
+          <td class="py-3 pl-3 pr-2 font-semibold text-stone-800 break-keep">산티아고 (SCQ)</td>
+          <td class="px-2 py-3 text-stone-600 break-keep">다수 (유럽/중동)</td>
+          <td class="py-3 pl-2 pr-3 text-right font-semibold text-stone-900 whitespace-nowrap">150만 원 ~ </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="px-3 py-2 bg-stone-50 border-t border-stone-100 text-[10px] text-rose-900 text-right">
+    * 예매 시점, 비행기 출발 및 도착 요일 및 유가/환율에 따라 쉽게 변동됩니다. <br> 참고용으로만 활용해 주세요.
+  </div>
+</div>
+
+<!-- 문의 연락처 -->
+        <div class="text-center pt-6 text-stone-500">
+          <p class="text-[11px]">문의 사항은 '카카오톡'으로 언제든 편하게 연락해 주세요.</p>
+          <p class="text-base text-stone-800 mt-2">비상 연락망: 민 동녘 (+34 641 499 816 또는 +82 4942 5072)</p>
         </div>
       </div>
+      <br><br>
     </section>
+
+    
+
+    <!-- 푸터 -->
+    <footer class="text-center py-8 bg-stone-50 border-t border-stone-200 text-stone-400 text-[11px]">
+      <p class="font-eng tracking-widest uppercase">Min & Laura · 2027.08.06</p>
+    </footer>
 
   </main>
 
-  <!-- 자바스크립트: D-Day 계산, 다국어 전환, 계좌 복사 -->
+  <!-- 자바스크립트: D-Day 카운트다운 -->
   <script>
-    // 1. D-Day 카운트다운 (2027년 8월 6일 기준)
     const weddingDate = new Date("2027-08-06T18:00:00").getTime();
     function updateDday() {
       const now = new Date().getTime();
@@ -172,31 +510,6 @@
       }
     }
     updateDday();
-
-    // 2. 다국어 토글 (KR / ES)
-    function changeLang(lang) {
-      document.querySelectorAll('[data-ko]').forEach(el => {
-        el.innerText = el.getAttribute(`data-${lang}`);
-      });
-      const btnKo = document.getElementById('btn-ko');
-      const btnEs = document.getElementById('btn-es');
-      if (lang === 'ko') {
-        btnKo.className = "px-2.5 py-1 rounded bg-stone-800 text-white font-medium";
-        btnEs.className = "px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium";
-      } else {
-        btnEs.className = "px-2.5 py-1 rounded bg-stone-800 text-white font-medium";
-        btnKo.className = "px-2.5 py-1 rounded bg-stone-100 text-stone-600 font-medium";
-      }
-    }
-
-    // 3. 계좌번호 복사 기능
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("계좌번호가 복사되었습니다.");
-      }).catch(() => {
-        alert("복사에 실패했습니다. 직접 복사해 주세요.");
-      });
-    }
   </script>
 </body>
 </html>
